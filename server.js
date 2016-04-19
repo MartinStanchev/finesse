@@ -14,4 +14,4 @@ function demo (req, res) {
   }
 }
 
-console.log('open http://localhost:3000 to listen to a song')
+console.log('server created on http://localhost:3000')
