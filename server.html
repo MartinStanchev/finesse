@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Finesse | Music Player</title>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-<meta charset=utf-8></head>
-<body class="align" background="/resources/wallpaper_road_blurred.jpg">
-  <div class="input_song_name" , style="margin-left:390px";>
-    <form id="form" onsubmit="return false;">
-      <input style="position:absolute;" type="text" id="userInput" />
-      <input style="position:absolute; left:25%" type="button" onclick="get_song_name();" value="Submit" />
-    </form>
-  </div>
-</body>
-<div class="player">
-   <audio id="audio1" style="width:25%" controls>Canvas not supported</audio>
-</div>
+	<title>Finesse | Music Player</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<meta charset=utf-8>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body class="align__hub" background="resources/wallpaper_road_blurred.jpg">
+	<div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                    	Finesse
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Hub</a>
+                </li>
+                <li>
+                    <a href="#">My Account</a>
+                </li>
+                <li>
+                    <a href="#">Subscriptions</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+	            </ul>
+        </div>
+
+	<div class="site__container">
+		
+
+		<div class="grid__container">
+			<form class="form form--login"method="post">
+				<div class="form__field">
+		  			<input type="text" id="login__username userInput" class="form__input" placeholder="YouTube Link" required/>
+				</div>
+
+				<div class="form__field">
+					<input type="submit" onclick="get_song_name();" value="Submit" />
+				</div>
+
+				<div class="player">
+				   <audio id="audio1" style="width:100%" controls>Canvas not supported</audio>
+				</div>
+			</form>
+		</div>
+	</div>	
+</body>		
 
 <script>
 var player = document.getElementById('audio1')

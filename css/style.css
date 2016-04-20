@@ -116,6 +116,18 @@ input {
           flex-direction: row;
 }
 
+.align__hub {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .hidden {
   border: 0;
   clip: rect(0 0 0 0);
