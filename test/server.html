@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  </style>
+<title>Finesse | Music Player</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta charset=utf-8></head>
+<body class="align" background="resources/wallpaper_road_blurred.jpg">
+  <div class="input_song_name" , style="margin-left:430px";>
+    <form id="form" onsubmit="return false;">
+      <input style="position:absolute;" type="text" id="userInput" />
+      <input style="position:absolute; left:25%" type="submit" onclick="get_song_name();" />
+    </form>
+  </div>
+</body>
+
+<div class="player">
+<script>
+var player = new window.Audio();
+
+function get_song_name() {
+    player.pause();
+    var input = document.getElementById("userInput").value;
+    player = new window.Audio(input) //test with: youtube.com/watch?v=ZRfnWpV4i7E
+    player.preload = 'metadata'
+    player.play()
+    player.controls = true
+    document.body.appendChild(player)
+}
+</script>
+</div>
+</html>
