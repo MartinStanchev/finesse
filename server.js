@@ -24,7 +24,7 @@ http.createServer(function(req, res) {
   }
   else {
     youtube_search(req.url.slice(1)).then(function(items) {
-      console.log(items);
+      console.log(items[0]);
       //trqbva da se pratqt tiq itemi kum html-a za da se napravi mesto v koeto da se izbira ot rezultata
       // v items[i].title == imeto na klipa, items[i].id == id-to na klipa toest chasta sled youtube.com/?watch=.. , items[i].thumb == link kum thumbnaila na klipa
       //tova trqbva da se predade kum html-a
@@ -63,7 +63,7 @@ function youtube_search(search_string) {
 
   youTube.setKey('AIzaSyA47VOhrCdx1kua5MB2XHbOoD0qTKSClS8');
 
-  youTube.search(search_string, 2, function(error, result) {
+  youTube.search((search_string.replace(/[^a-zA-Z ]/g, "")), 2, function(error, result) {
     if (error) {
       deffered.reject(new Error(error));
     }
