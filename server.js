@@ -5,6 +5,7 @@ var path = require('path');
 var async = require('async');
 var YouTube = require('youtube-node');
 var Q = require('q');
+var php = require('node-php');
 
 http.createServer(function(req, res) {
 
@@ -18,12 +19,16 @@ http.createServer(function(req, res) {
   else if(req.url.indexOf('.css') != -1 || req.url.indexOf('.min.css') != -1) {
     css(res);
   }
+  else if(req.url.indexOf('.php') != -1) {
+    php.cgi("/public/login.php");
+  }
   else {
     youtube_search(req.url.slice(1)).then(function(items) {
       console.log(items);
       //trqbva da se pratqt tiq itemi kum html-a za da se napravi mesto v koeto da se izbira ot rezultata
       // v items[i].title == imeto na klipa, items[i].id == id-to na klipa toest chasta sled youtube.com/?watch=.. , items[i].thumb == link kum thumbnaila na klipa
       //tova trqbva da se predade kum html-a
+      stream('youtube.com/watch?v=' + items[0].id).pipe(res);
     });
   }
 }).listen(3000);
