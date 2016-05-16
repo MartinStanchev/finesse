@@ -6,6 +6,26 @@
 
 /* Toggle Styles */
 
+
+h3, p, h2 {
+  color: #999999;
+}
+
+.date {
+  color: rgb(206, 121, 153);
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight:bold;
+}
+
+.news {
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  padding-bottom: 15px;
+}
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -17,16 +37,27 @@
 #wrapper.toggled {
     padding-left: 250px;
 }
+.right-sidebar-wrapper{
+	    margin: 0 auto;
 
+}
 #sidebar-wrapper {
+	display:block;
     z-index: 1000;
-    position: fixed;
     left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background: #000;
+    background: rgba(0, 0, 0, .6);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-wrapper2 {
+  overflow-y: scroll;
+	display:block;
+    z-index: 1000;
+    left: 250px;
+    background: rgba(0, 0, 0, .6);
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
