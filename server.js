@@ -6,9 +6,6 @@ var async = require('async');
 var YouTube = require('youtube-node');
 var Q = require('q');
 
-var content = fs.readFileSync('server.html', 'utf-8');
-var compiled = ejs.compile(content);
-
 http.createServer(function(req, res) {
 
   if (req.url === '/') {
